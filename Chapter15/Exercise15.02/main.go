@@ -29,6 +29,10 @@ func main() {
 
 	primeSum = 0
 	result, err := numbers.Query()
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Println("The list of prime numbers:")
 	for result.Next() {
 		err = result.Scan(&number, &prop)
@@ -42,7 +46,11 @@ func main() {
 
 	}
 
-	numbers.Close()
+	err = numbers.Close()
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Println("\nThe total sum of prime numbers in this range is:", primeSum)
 
 	Remove := "DELETE FROM Number WHERE Property=$1"
@@ -50,7 +58,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
 	ModifiedRecords, err := removeResult.RowsAffected()
+	if err != nil {
+		panic(err)
+	}
+
 	fmt.Println("The number of rows removed:", ModifiedRecords)
 	fmt.Println("Updating numbers...")
 

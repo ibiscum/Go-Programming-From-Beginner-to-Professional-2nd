@@ -1,14 +1,15 @@
 package main
+
 import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"net/http"
 	"os"
 )
+
 func postFileAndReturnResponse(filename string) string {
 	// create a buffer we can write the file to
 	fileDataBuffer := bytes.Buffer{}
@@ -44,7 +45,7 @@ func postFileAndReturnResponse(filename string) string {
 	}
 	// get data from the response body
 	defer response.Body.Close()
-	data, err := ioutil.ReadAll(response.Body)
+	data, err := io.ReadAll(response.Body)
 	if err != nil {
 		log.Fatal(err)
 	}

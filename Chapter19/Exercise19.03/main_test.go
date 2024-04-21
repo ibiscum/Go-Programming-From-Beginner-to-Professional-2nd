@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -37,7 +38,10 @@ func TestAuthenticationIntegration(t *testing.T) {
 		// Simulate authentication logic
 		if r.Header.Get("Authorization") == "Bearer valid_token" {
 			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(`{"user_id": "123", "username": "testuser"}`))
+			_, err := w.Write([]byte(`{"user_id": "123", "username": "testuser"}`))
+			if err != nil {
+				log.Panic(err)
+			}
 		} else {
 			w.WriteHeader(http.StatusUnauthorized)
 		}
