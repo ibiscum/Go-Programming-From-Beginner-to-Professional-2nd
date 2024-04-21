@@ -5,10 +5,10 @@ import (
 )
 
 func TestRemoveBad(t *testing.T) {
-	if _, exists := getName(""); exists {
+	if _, exists := getLocales(""); exists {
 		t.Fail()
 	}
-	if name, exists := getName("305"); !exists || name != "Sue" {
+	if name, exists := getLocales("305"); !exists || name != "Sue" {
 		t.Fail()
 	}
 }

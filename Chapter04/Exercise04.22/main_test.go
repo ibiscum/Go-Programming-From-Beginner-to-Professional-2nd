@@ -10,7 +10,7 @@ int     = 128  > in8     = -128
 int8    = 127  > float32 = 127
 float64 = 3.14 > int     = 3
 `
-	if res := convert(); res != m {
+	if res := doubler(); res != m {
 		t.Fail()
 	}
 }
