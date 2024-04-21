@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -12,7 +11,6 @@ func TestNewRecord(t *testing.T) {
 		inputInterface interface{}
 		wanted         record
 	}{
-
 		{
 			name:           "Int Scenario",
 			inputKey:       "intValue",
@@ -21,7 +19,7 @@ func TestNewRecord(t *testing.T) {
 		},
 		{
 			name:           "Bool Scenario",
-			inputKey:       "intValue",
+			inputKey:       "boolValue",
 			inputInterface: true,
 			wanted:         record{key: "boolValue", valueType: "bool", data: 100},
 		},
@@ -36,7 +34,7 @@ func TestNewRecord(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			got := newRecord(tc.inputKey, tc.inputInterface)
 			if got.key != tc.wanted.key {
-				fmt.Errorf("Got: %v wanted %v", got, tc.wanted.key)
+				t.Errorf("got: %v, wanted: %v", got, tc.wanted.key)
 
 			}
 		})

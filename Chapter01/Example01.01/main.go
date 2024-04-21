@@ -9,7 +9,7 @@ func main() {
 		"Hello, world",
 		"Καλημέρα κόσμε",
 		"こんにちは世界",
-		"سلام دنیا‎",
+		"سلام دنیا\u200e",
 		"Привет, мир",
 	}
 	fmt.Println(len(helloList))

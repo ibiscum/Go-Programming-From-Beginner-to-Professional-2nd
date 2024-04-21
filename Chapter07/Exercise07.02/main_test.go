@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -26,9 +25,8 @@ func TestTriangleArea(t *testing.T) {
 			s := triangle{base: tc.base, height: tc.height}
 			got := s.Area()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				t.Errorf("got: %v wanted %v", got, tc.wanted)
 			}
-
 		})
 	}
 }
@@ -49,7 +47,7 @@ func TestTriangleName(t *testing.T) {
 			s := triangle{}
 			got := s.Name()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				t.Errorf("got: %v wanted %v", got, tc.wanted)
 			}
 
 		})
@@ -77,7 +75,7 @@ func TestRectangleArea(t *testing.T) {
 			s := rectangle{length: tc.length, width: tc.width}
 			got := s.Area()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				t.Errorf("got: %v wanted %v", got, tc.wanted)
 			}
 
 		})
@@ -100,12 +98,12 @@ func TestRectangleName(t *testing.T) {
 			s := rectangle{}
 			got := s.Name()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				t.Errorf("got: %v, wanted: %v", got, tc.wanted)
 			}
-
 		})
 	}
 }
+
 func TestSquareArea(t *testing.T) {
 
 	testCases := []struct {
@@ -125,7 +123,7 @@ func TestSquareArea(t *testing.T) {
 			s := square{side: tc.side}
 			got := s.Area()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				t.Errorf("got: %v, wanted: %v", got, tc.wanted)
 			}
 		})
 	}
@@ -147,9 +145,26 @@ func TestSquareName(t *testing.T) {
 			s := square{}
 			got := s.Name()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				t.Errorf("got: %v, wanted: %v", got, tc.wanted)
 			}
 
+		})
+	}
+}
+
+func Test_printShapeDetails(t *testing.T) {
+	type args struct {
+		shapes []Shape
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			printShapeDetails(tt.args.shapes...)
 		})
 	}
 }

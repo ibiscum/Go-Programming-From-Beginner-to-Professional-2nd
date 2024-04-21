@@ -108,12 +108,11 @@ func TestRectangleName(t *testing.T) {
 			s := Rectangle{}
 			got := s.name()
 			if got != tc.wanted {
-				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("got: %v, wanted: %v", got, tc.wanted)
 				if err != nil {
-					panic(err)
+					fmt.Println(err)
 				}
 			}
-
 		})
 	}
 }

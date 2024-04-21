@@ -25,7 +25,7 @@ func TestString(t *testing.T) {
 			got := p.String()
 
 			if got != tc.wanted {
-				t.Errorf("Got   : %v\n Wanted: %v\n", got, tc.wanted)
+				t.Errorf("got: %v, wanted: %v", got, tc.wanted)
 			}
 		})
 	}

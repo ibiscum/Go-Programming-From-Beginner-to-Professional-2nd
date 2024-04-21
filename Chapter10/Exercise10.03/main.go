@@ -15,6 +15,7 @@ func init() {
 	budgetCategories[7] = "Groceries"
 	budgetCategories[8] = "Car Payment"
 }
+
 func init() {
 	fmt.Println("Assign our Payees to categories")
 	payeeToCategory["Nationwide"] = 1
@@ -27,6 +28,7 @@ func init() {
 	payeeToCategory["Wal Mart"] = 7
 	payeeToCategory["Chevy Loan"] = 8
 }
+
 func main() {
 	fmt.Println("In main, printing payee to category")
 	for k, v := range payeeToCategory {

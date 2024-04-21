@@ -135,7 +135,6 @@ func processFile(filename string) {
 	}
 }
 
-
 func main() {
 	p := tea.NewProgram(model{})
 

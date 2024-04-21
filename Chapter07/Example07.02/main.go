@@ -1,30 +1,36 @@
 package main
+
 import (
-  "fmt"
+	"fmt"
 )
+
 type Speaker interface {
-  Speak() string
+	Speak() string
 }
 type cat struct {
-  name string
+	name string
 }
+
 func main() {
-  c := cat{name: "oreo"}
-  i := 99
-  b := false
-  str := "test"
-  catDetails(c)
-  emptyDetails(c)
-  emptyDetails(i)
-  emptyDetails(b)
-  emptyDetails(str)
+	c := cat{name: "oreo"}
+	i := 99
+	b := false
+	str := "test"
+	catDetails(c)
+	emptyDetails(c)
+	emptyDetails(i)
+	emptyDetails(b)
+	emptyDetails(str)
 }
+
 func (c cat) Speak() string {
-  return "Purr Meow"
+	return "Purr Meow"
 }
+
 func emptyDetails(i interface{}) {
-  fmt.Printf("(%v, %T)\n", i, i)
+	fmt.Printf("(%v, %T)\n", i, i)
 }
+
 func catDetails(i Speaker) {
-  fmt.Printf("(%v, %T)\n", i, i)
+	fmt.Printf("(%v, %T)\n", i, i)
 }

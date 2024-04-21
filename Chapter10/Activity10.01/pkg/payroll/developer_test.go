@@ -2,7 +2,6 @@ package payroll
 
 import (
 	"errors"
-	"fmt"
 	"testing"
 )
 
@@ -32,7 +31,7 @@ func TestPay(t *testing.T) {
 			d := Developer{Individual: Employee{Id: 1, FirstName: tc.inputFirst, LastName: tc.inputLast}, HourlyRate: tc.inputHourlyRate, HoursWorkedInYear: tc.inputHoursWorkedInYear, Review: nil}
 			gotName, gotSalary := d.Pay()
 			if gotName != tc.wantedFullName || gotSalary != tc.wantedPay {
-				fmt.Errorf("Got name: %v wanted name: %v Got salary: %v wanted salary %v", gotName, tc.wantedFullName, gotSalary, tc.wantedPay)
+				t.Errorf("got name: %v, wanted name: %v, got salary: %v, wanted salary: %v", gotName, tc.wantedFullName, gotSalary, tc.wantedPay)
 			}
 		})
 	}
@@ -58,7 +57,7 @@ func TestFullName(t *testing.T) {
 			d := Developer{Individual: Employee{Id: 1, FirstName: tc.fname, LastName: tc.lname}}
 			gotName := d.fullName()
 			if gotName != tc.wanted {
-				fmt.Errorf("Got name: %v wanted name: %v ", gotName, tc.wanted)
+				t.Errorf("got name: %v, wanted name: %v", gotName, tc.wanted)
 			}
 		})
 	}
@@ -113,7 +112,7 @@ func TestConvertReviewToInt(t *testing.T) {
 		gotrating, goterr := convertReviewToInt(tc.review)
 
 		if gotrating != tc.wantedInt || goterr != tc.wantedErr {
-			fmt.Errorf("Got rating: %v wanted: %v Got error: %v wanted %v", gotrating, tc.wantedInt, goterr, tc.wantedErr)
+			t.Errorf("got rating: %v, wanted rating: %v, got error: %v, wanted error: %v", gotrating, tc.wantedInt, goterr, tc.wantedErr.Error())
 		}
 	}
 }

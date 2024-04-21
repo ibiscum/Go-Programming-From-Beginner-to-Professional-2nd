@@ -20,5 +20,4 @@ func main() {
 	fmt.Printf("grades value %#v\n", grades)
 	fmt.Printf("states value %#v\n", states)
 	fmt.Printf("p value %#v\n", p)
-
 }

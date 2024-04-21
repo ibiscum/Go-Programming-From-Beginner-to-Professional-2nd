@@ -15,7 +15,7 @@ var helloList = []string{
 	"Hello, world",
 	"Καλημέρα κόσμε",
 	"こんにちは世界",
-	"سلام دنیا‎",
+	"سلام دنیا\u200e",
 	"Привет, мир",
 }
 
@@ -33,6 +33,7 @@ func main() {
 	// Print our message to the console
 	fmt.Println(msg)
 }
+
 func hello(index int) (string, error) {
 	if index < 0 || index > len(helloList)-1 {
 		// Create an error, convert the int type to a string

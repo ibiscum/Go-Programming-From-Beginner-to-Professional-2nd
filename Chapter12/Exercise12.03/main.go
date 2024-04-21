@@ -16,6 +16,7 @@ func timeDiff(timezone string) (string, string) {
 	fmt.Println("The timezone:", timezone, "time is:", remoteTime)
 	return current.Format(time.ANSIC), remoteTime.Format(time.ANSIC)
 }
+
 func main() {
 	fmt.Println(timeDiff("America/Los_Angeles"))
 }

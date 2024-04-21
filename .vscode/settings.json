@@ -1,0 +1,9 @@
+{
+    "editor.indentSize": "tabSize",
+    "editor.insertSpaces": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true
+}

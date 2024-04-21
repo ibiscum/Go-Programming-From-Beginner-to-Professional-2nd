@@ -14,6 +14,7 @@ func init() {
 	budgetCategories[7] = "Groceries"
 	budgetCategories[8] = "Car Payment"
 }
+
 func main() {
 	for k, v := range budgetCategories {
 		fmt.Printf("key: %d, value: %s\n", k, v)

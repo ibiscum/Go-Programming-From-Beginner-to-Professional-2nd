@@ -1,12 +1,14 @@
-package main 
+package main
 
-import "time"
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func whatstheclock() string {
 	return time.Now().Format(time.ANSIC)
 }
 
-func main(){
+func main() {
 	fmt.Println(whatstheclock())
 }
