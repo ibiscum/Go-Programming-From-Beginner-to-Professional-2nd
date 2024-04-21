@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -13,7 +14,7 @@ func TestHello_ServeHTTP(t *testing.T) {
 	r := httptest.NewRequest(http.MethodGet, "/", strings.NewReader(""))
 	w := httptest.NewRecorder()
 
-	hello.ServeHTTP(w,r)
+	hello.ServeHTTP(w, r)
 	if w.Body.String() != "<h1>Hello World</h1>" {
 		t.Errorf("Expected '<h1>Hello World</h1>' string but received: '%s'", w.Body.String())
 	}
@@ -30,7 +31,10 @@ func TestHello_ServeHTTPWithPath(t *testing.T) {
 	}
 
 	result := make([]byte, rsp.ContentLength)
-	rsp.Body.Read(result)
+	_, err = rsp.Body.Read(result)
+	if err != nil {
+		log.Panic(err)
+	}
 
 	if string(result) != "<h1>Hello World</h1>" {
 		t.Errorf("Expected '<h1>Hello World</h1>' string but received: '%s'", string(result))

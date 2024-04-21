@@ -78,13 +78,31 @@ func handler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	ctx := context.Background()
 	traceExporter := initTraceExporter(ctx)
-	defer traceExporter.Shutdown(context.Background())
+	defer func() {
+		err := traceExporter.Shutdown(context.Background())
+		if err != nil {
+			log.Panic(err)
+		}
+	}()
+
 	logExporter := initLogExporter(ctx)
-	defer logExporter.Shutdown(context.Background())
+	defer func() {
+		err := logExporter.Shutdown(context.Background())
+		if err != nil {
+			log.Panic(err)
+		}
+	}()
+
 	tp := initTracerProvider(traceExporter)
 	otel.SetTracerProvider(tp)
 	logger := initLogger()
-	defer logger.Sync()
+	defer func() {
+		err := logger.Sync()
+		if err != nil {
+			log.Panic(err)
+		}
+	}()
+
 	httpHandler := otelhttp.NewHandler(http.HandlerFunc(handler), "HTTPServer")
 	http.Handle("/", httpHandler)
 	server := &http.Server{

@@ -15,7 +15,10 @@ type PageWithCounter struct {
 func (h *PageWithCounter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.Counter++
 	msg := fmt.Sprintf("<h1>%s</h1>\n<p>%s<p>\n<p>Views: %d</p>", h.Heading, h.Content, h.Counter)
-	w.Write([]byte(msg))
+	_, err := w.Write([]byte(msg))
+	if err != nil {
+		log.Panic(err)
+	}
 }
 
 func main() {

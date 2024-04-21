@@ -9,8 +9,8 @@ import (
 
 func main() {
 	var name string
-	var id int
-	id = 2
+	var id int = 2
+
 	db, err := sql.Open("postgres", "user=postgres password=Start!123 host=127.0.0.1 port=5432 dbname=postgres sslmode=disable")
 	if err != nil {
 		panic(err)

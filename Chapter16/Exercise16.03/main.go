@@ -12,7 +12,10 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 	name, ok := vl["name"]
 	if !ok {
 		w.WriteHeader(400)
-		w.Write([]byte("Missing name"))
+		_, err := w.Write([]byte("Missing name"))
+		if err != nil {
+			log.Panic(err)
+		}
 		return
 	}
 	_, err := w.Write([]byte(fmt.Sprintf("Hello %s", strings.Join(name, ","))))
