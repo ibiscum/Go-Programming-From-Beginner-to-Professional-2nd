@@ -62,17 +62,17 @@ func main() {
 	if !os.IsNotExist((err)) {
 		os.Remove(*logFile)
 	}
- 
+
 	csvFile, err := os.Open(*bankFile)
 	if err != nil {
 		fmt.Println("Error opening file: ", *bankFile)
 		os.Exit(1)
 	}
 	trxs := parseBankFile(csvFile, *logFile)
-    	fmt.Println()
-    	for _, trx := range trxs {
-        fmt.Printf("%v\n", trx)
-    }
+	fmt.Println()
+	for _, trx := range trxs {
+		fmt.Printf("%v\n", trx)
+	}
 
 }
 
@@ -116,7 +116,10 @@ func parseBankFile(bankTransactions io.Reader, logFile string) []transaction {
 					trx.category, err = convertToBudgetCategory(value)
 					if err != nil {
 						s := strings.Join(record, ", ")
-						writeErrorToLog("error converting csv category column - ", err, s, logFile)
+						err := writeErrorToLog("error converting csv category column - ", err, s, logFile)
+						if err != nil {
+							log.Fatal(err)
+						}
 					}
 				}
 			}
