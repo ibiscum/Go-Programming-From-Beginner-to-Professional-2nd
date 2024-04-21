@@ -15,10 +15,14 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+	fmt.Println(pay)
+
 	pay, err = payDay(80, 5)
 	if err != nil {
 		fmt.Println(err)
 	}
+	fmt.Println(pay)
+
 	pay, err = payDay(80, 50)
 	if err != nil {
 		fmt.Println(err)

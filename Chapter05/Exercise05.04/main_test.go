@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestcsvHdrCol(t *testing.T) {
+func TestCsvHdrCol(t *testing.T) {
 
 	testCases := []struct {
 		name   string
@@ -45,5 +45,4 @@ func TestcsvHdrCol(t *testing.T) {
 			}
 		})
 	}
-
 }

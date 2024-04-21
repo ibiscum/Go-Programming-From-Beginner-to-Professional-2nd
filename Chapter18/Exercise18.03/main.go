@@ -14,7 +14,7 @@ func sum(from, to int, wg *sync.WaitGroup, res *int32) {
 
 	wg.Done()
 
-	return
+	// return
 }
 
 func main() {

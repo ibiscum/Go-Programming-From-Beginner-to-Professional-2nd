@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"log"
 
 	_ "github.com/lib/pq"
 )
@@ -28,9 +29,9 @@ func main() {
 	for rows.Next() {
 		err := rows.Scan(&id, &name)
 		if err != nil {
-			panic(err)
+			log.Panic(err)
 		}
-		fmt.Printf("Retrieved data from db: %d %s\n”, id, name")
+		fmt.Printf("Retrieved data from db: %d %s\n", id, name)
 	}
 
 	err = rows.Err()
