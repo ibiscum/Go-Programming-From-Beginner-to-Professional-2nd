@@ -13,7 +13,10 @@ func (srv server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	auth := r.Header.Get("Authorization")
 	if auth != "superSecretToken" {
 		w.WriteHeader(http.StatusUnauthorized)
-		w.Write([]byte("Authorization token not recognized"))
+		_, err := w.Write([]byte("Authorization token not recognized"))
+		if err != nil {
+			log.Panic(err)
+		}
 		return
 	}
 
@@ -21,7 +24,11 @@ func (srv server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	time.Sleep(10 * time.Second)
 
 	msg := "hello client!"
-	w.Write([]byte(msg))
+	_, err := w.Write([]byte(msg))
+	if err != nil {
+		log.Panic(err)
+	}
+
 }
 
 func main() {

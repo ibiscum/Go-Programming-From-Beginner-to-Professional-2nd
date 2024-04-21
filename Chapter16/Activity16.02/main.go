@@ -20,17 +20,19 @@ func (h Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	cust := Visitor{}
 
-
 	name, ok := vl["name"]
 	if ok {
 		cust.Name = strings.Join(name, ",")
 	}
 
-	h.tpl.Execute(w, cust)
+	err := h.tpl.Execute(w, cust)
+	if err != nil {
+		log.Panic(err)
+	}
 }
 
 // NewHello returns a new Hello handler
-func NewHello(tplPath string) (*Hello, error){
+func NewHello(tplPath string) (*Hello, error) {
 	tmpl, err := template.ParseFiles(tplPath)
 	if err != nil {
 		return nil, err
