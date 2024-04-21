@@ -12,17 +12,23 @@ func main() {
 	count3 := &countTemp
 	t := &time.Time{}
 
-	if count1 != nil {
-		fmt.Printf("count1: %#v\n", *count1)
-	}
-	if count2 != nil {
-		fmt.Printf("count2: %#v\n", *count2)
-	}
-	if count3 != nil {
-		fmt.Printf("count3: %#v\n", *count3)
-	}
-	if t != nil {
-		fmt.Printf("time  : %#v\n", *t)
-		fmt.Printf("time  : %#v\n", t.String())
-	}	
+	fmt.Printf("count1: %#v\n", &count1)
+	fmt.Printf("count2: %#v\n", *count2)
+	fmt.Printf("count3: %#v\n", *count3)
+	fmt.Printf("time  : %#v\n", *t)
+	fmt.Printf("time  : %#v\n", t.String())
+
+	// if count1 != nil {
+	// 	fmt.Printf("count1: %#v\n", *count1)
+	// }
+	// if count2 != nil {
+	// 	fmt.Printf("count2: %#v\n", *count2)
+	// }
+	// if count3 != nil {
+	// 	fmt.Printf("count3: %#v\n", *count3)
+	// }
+	// if t != nil {
+	// 	fmt.Printf("time  : %#v\n", *t)
+	// 	fmt.Printf("time  : %#v\n", t.String())
+	// }
 }

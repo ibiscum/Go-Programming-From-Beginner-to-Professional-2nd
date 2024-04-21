@@ -3,13 +3,13 @@ package main
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"strconv"
 )
 
 var (
-	ErrWorkingFileNotFound = errors.New("The working file is not found.")
+	ErrWorkingFileNotFound = errors.New("the working file is not found")
 )
 
 func main() {
@@ -61,12 +61,12 @@ func createBackup(working, backup string) error {
 		return err
 	}
 
-	content, err := ioutil.ReadAll(workFile)
+	content, err := io.ReadAll(workFile)
 	if err != nil {
 		return err
 	}
 
-	err = ioutil.WriteFile(backup, content, 0644)
+	err = os.WriteFile(backup, content, 0644)
 	if err != nil {
 		fmt.Println(err)
 	}

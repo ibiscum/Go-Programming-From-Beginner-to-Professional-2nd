@@ -101,6 +101,9 @@ ALTER TABLE public.messages
 	}
 
 	result, err := usersMessages.Query(toLookFor)
+	if err != nil {
+		panic(err)
+	}
 
 	numberof := 0
 	for result.Next() {
@@ -112,6 +115,9 @@ ALTER TABLE public.messages
 		fmt.Println("There are a total of", numberof, "messages from the user:", toLookFor)
 
 		result, err := usersMessages.Query(toLookFor)
+		if err != nil {
+			panic(err)
+		}
 		for result.Next() {
 			err = result.Scan(&name, &email, &message)
 			if err != nil {

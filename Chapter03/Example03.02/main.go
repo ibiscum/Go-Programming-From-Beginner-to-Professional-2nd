@@ -12,6 +12,8 @@ func main() {
 		list = append(list, 100)
 	}
 
+	fmt.Println(len(list))
+
 	var m runtime.MemStats
 	runtime.ReadMemStats(&m)
 	fmt.Printf("TotalAlloc (Heap) = %v MiB\n", m.TotalAlloc/1024/1024)

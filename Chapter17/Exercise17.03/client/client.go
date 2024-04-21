@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 )
@@ -25,7 +25,7 @@ func postDataAndReturnResponse(msg messageData) messageData {
 
 	// get data from the response body
 	defer r.Body.Close()
-	data, err := ioutil.ReadAll(r.Body)
+	data, err := io.ReadAll(r.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
