@@ -15,7 +15,10 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Missing name"))
 		return
 	}
-	w.Write([]byte(fmt.Sprintf("Hello %s", strings.Join(name, ","))))
+	_, err := w.Write([]byte(fmt.Sprintf("Hello %s", strings.Join(name, ","))))
+	if err != nil {
+		log.Panic(err)
+	}
 }
 
 func main() {
