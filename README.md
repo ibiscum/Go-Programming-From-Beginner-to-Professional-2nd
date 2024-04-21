@@ -1,5 +1,7 @@
 # Go Programming - From Beginner to Professional Second Edition
 
+[![lint](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/lint.yml/badge.svg)](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/lint.yml)
+
 <a href="https://www.packtpub.com/product/go-programming-from-beginner-to-professional-second-edition/9781803243054"> <img src="https://content.packt.com/B18621/cover_image_small.jpg" alt="Go Programming - From Beginner to Professional - Second Edition" itemprop="url" height="256px" align="right">
 
 This is the code repository for [Go Programing - From Beginner to Professional Second Edition](https://www.packtpub.com/product/go-programming-from-beginner-to-professional-second-edition/9781803243054), published by Packt.
@@ -8,7 +10,7 @@ This is the code repository for [Go Programing - From Beginner to Professional S
 
 ## What is this book about?
 Master real-world development in “Go Programming – From Beginner to Professional”. From the basics to advanced topics, gain proficiency by mastering applications, database interactions, RESTful APIs, concurrency and more using Go idiomatic practices.
- 
+
 This book covers the following exciting features:
 * Understand the Go syntax and apply it proficiently to handle data and write functions
 * Debug your Go code to troubleshoot development problems
@@ -37,10 +39,10 @@ func main() {
 ```
 
 ## OS Specific Instructions
-* Sometimes some of the executable generated while running "go build" may not directly work for Windows, try running"go run ." or "go run main.go" 
+* Sometimes some of the executable generated while running "go build" may not directly work for Windows, try running"go run ." or "go run main.go"
 * For Exercise 13.03, "cat" command is OS specific, "type" command would work for Windows.
 * Running Exercise 13.04 may show some OS specific errors, replacing "echo" in code with "print" works for Windows.
-* Exercise 14.01 applies for unix-like systems (linux and macOS). Windows does not work with signals the same way so this exercise will not work for windows. 
+* Exercise 14.01 applies for unix-like systems (linux and macOS). Windows does not work with signals the same way so this exercise will not work for windows.
 
 **Following is what you need for this book:**
 Designed for both complete beginners in Go as well as professionals transitioning from another programming language, this book equips developers with skills needed to build real-world projects and launch their career in Go. With a step-by-step approach, beginners can grasp Go fundamentals even without prior programming experience, and gradually advance to idiomatic Go best practices, exploring the latest features of the language.
