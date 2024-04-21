@@ -40,29 +40,33 @@ func main() {
 		}
 	}
 }
+
 func validLength(ssn string) error {
 	ssn = strings.TrimSpace(ssn)
 	if len(ssn) != 9 {
-		return fmt.Errorf("the value of %s caused an error: %v\n", ssn, ErrInvalidSSNLength)
+		err := fmt.Errorf("the value of %s caused an error: %v", ssn, ErrInvalidSSNLength)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
 func isNumber(ssn string) error {
 	_, err := strconv.Atoi(ssn)
 	if err != nil {
-		return fmt.Errorf("the value of %s caused an error: %v\n", ssn, ErrInvalidSSNNumbers)
+		return fmt.Errorf("the value of %s caused an error: %v", ssn, ErrInvalidSSNNumbers)
 	}
 	return nil
 }
 func isPrefixValid(ssn string) error {
 	if strings.HasPrefix(ssn, "000") {
-		return fmt.Errorf("the value of %s caused an error: %v\n", ssn, ErrInvalidSSNPrefix)
+		return fmt.Errorf("the value of %s caused an error: %v", ssn, ErrInvalidSSNPrefix)
 	}
 	return nil
 }
 func validDigitPlace(ssn string) error {
 	if string(ssn[0]) == "9" && (string(ssn[3]) != "9" && string(ssn[3]) != "7") {
-		return fmt.Errorf("the value of %s caused an error: %v\n", ssn, ErrInvalidSSNDigitPlace)
+		return fmt.Errorf("the value of %s caused an error: %v", ssn, ErrInvalidSSNDigitPlace)
 	}
 	return nil
 }

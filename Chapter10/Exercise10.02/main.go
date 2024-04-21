@@ -1,6 +1,9 @@
 package main
+
 import "fmt"
+
 var budgetCategories = make(map[int]string)
+
 func init() {
 	fmt.Println("Initializing our budgetCategories")
 	budgetCategories[1] = "Car Insurance"

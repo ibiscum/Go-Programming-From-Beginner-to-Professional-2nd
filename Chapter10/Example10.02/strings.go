@@ -1,3 +1,7 @@
+package example1002
+
+import "unicode/utf8"
+
 // https://golang.org/src/strings/strings.go
 // explode splits s into a slice of UTF-8 strings,
 // one string per Unicode character up to a maximum of n (n < 0 means no limit).

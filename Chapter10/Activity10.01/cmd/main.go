@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"activity10.01/pkg/payroll"
+	"github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/Chapter10/Activity10.01/pkg/payroll"
 )
 
 var employeeReview = make(map[string]interface{})

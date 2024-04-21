@@ -26,9 +26,11 @@ func TestTriangleArea(t *testing.T) {
 			s := Triangle{Base: tc.base, Height: tc.height}
 			got := s.area()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				if err != nil {
+					panic(err)
+				}
 			}
-
 		})
 	}
 }
@@ -49,7 +51,10 @@ func TestTriangleName(t *testing.T) {
 			s := Triangle{}
 			got := s.name()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				if err != nil {
+					panic(err)
+				}
 			}
 
 		})
@@ -77,7 +82,10 @@ func TestRectangleArea(t *testing.T) {
 			s := Rectangle{Length: tc.length, Width: tc.width}
 			got := s.area()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				if err != nil {
+					panic(err)
+				}
 			}
 
 		})
@@ -100,7 +108,10 @@ func TestRectangleName(t *testing.T) {
 			s := Rectangle{}
 			got := s.name()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				if err != nil {
+					panic(err)
+				}
 			}
 
 		})
@@ -125,7 +136,10 @@ func TestSquareArea(t *testing.T) {
 			s := Square{Side: tc.side}
 			got := s.area()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				if err != nil {
+					panic(err)
+				}
 			}
 		})
 	}
@@ -147,7 +161,10 @@ func TestSquareName(t *testing.T) {
 			s := Square{}
 			got := s.name()
 			if got != tc.wanted {
-				fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				if err != nil {
+					panic(err)
+				}
 			}
 
 		})

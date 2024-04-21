@@ -1,8 +1,9 @@
 package strings
+
 import (
-	"unicode/utf8"
-	"unsafe"
+	"sync"
 )
+
 type Builder struct {
 	addr *Builder // of receiver, to detect copies by value
 	buf  []byte
@@ -20,11 +21,6 @@ func Compare(a, b string) int {
 }
 
 // https://golang.org/src/strings/replace.go
-package strings
-import (
-	"io"
-	"sync"
-)
 type Replacer struct {
 	once   sync.Once // guards buildOnce method
 	r      replacer
