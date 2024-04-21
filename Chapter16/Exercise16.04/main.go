@@ -57,7 +57,10 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 	}
 	tmpl, _ := template.New("test").Parse(tplStr)
 
-	tmpl.Execute(w, cust)
+	err := tmpl.Execute(w, cust)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func main() {

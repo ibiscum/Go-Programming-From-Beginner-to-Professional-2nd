@@ -23,7 +23,10 @@ func (srv server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	jsonBytes, _ := json.Marshal(messageData)
 	log.Println(string(jsonBytes))
-	w.Write(jsonBytes)
+	_, err = w.Write(jsonBytes)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func main() {
