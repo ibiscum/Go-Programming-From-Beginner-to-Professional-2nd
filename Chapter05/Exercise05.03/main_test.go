@@ -11,34 +11,34 @@ func TestFizzBuzz(t *testing.T) {
 	}{
 
 		{
-			name:      "Fizz",
+			name:      "Even",
 			input:     6,
 			wantedInt: 6,
-			wantedStr: "Fizz",
+			wantedStr: "Even",
 		},
 
 		{
-			name:      "Buzz",
+			name:      "Even",
 			input:     10,
 			wantedInt: 10,
-			wantedStr: "Buzz",
+			wantedStr: "Even",
 		},
 
 		{
-			name:      "FizzBuzz",
+			name:      "Odd",
 			input:     15,
 			wantedInt: 15,
-			wantedStr: "FizzBuzz",
+			wantedStr: "Odd",
 		},
 	}
 
 	for _, tc := range testCases {
 		tc := tc
 		t.Run(tc.name, func(t *testing.T) {
-			gotInt, gotStr := fizzBuzz(tc.input)
+			gotInt, gotStr := checkNumbers(tc.input)
 
 			if gotInt != tc.wantedInt || gotStr != tc.wantedStr {
-				t.Errorf("Wanted integer: %v, got %v, wanted string %v got %v ", tc.wantedInt, gotInt, tc.wantedStr, gotStr)
+				t.Errorf("wanted integer: %v, got integer: %v, wanted string %v, got string: %v ", tc.wantedInt, gotInt, tc.wantedStr, gotStr)
 			}
 
 		})

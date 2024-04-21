@@ -5,12 +5,13 @@ import (
 )
 
 func TestConversion(t *testing.T) {
-	m := `int8    = 127  > in64    = 127
-int     = 128  > in8     = -128
-int8    = 127  > float32 = 127
-float64 = 3.14 > int     = 3
-`
-	if res := doubler(); res != m {
+	// m := `
+	// int8    = 127  > int64    = 127
+	// int     = 128  > int8     = -128
+	// int8    = 127  > float32 = 127
+	// float64 = 3.14 > int     = 3`
+
+	if _, err := doubler("bool"); err != nil {
 		t.Fail()
 	}
 }

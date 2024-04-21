@@ -10,6 +10,7 @@ func main() {
 		fmt.Printf("Results:  %d %s\n", num, result)
 	}
 }
+
 func checkNumbers(i int) (int, string) {
 	switch {
 	case i%2 == 0:
