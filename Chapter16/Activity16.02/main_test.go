@@ -1,9 +1,9 @@
 package main
 
 import (
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"testing"
 )
 
@@ -17,7 +17,7 @@ func Test_name(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	expected, err := ioutil.ReadFile("./teststatics/john.html")
+	expected, err := os.ReadFile("./teststatics/john.html")
 	if err != nil {
 		t.Error(err)
 	}
@@ -38,7 +38,7 @@ func Test_anonymous(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	expected, err := ioutil.ReadFile("./teststatics/anonymous.html")
+	expected, err := os.ReadFile("./teststatics/anonymous.html")
 	if err != nil {
 		t.Error(err)
 	}

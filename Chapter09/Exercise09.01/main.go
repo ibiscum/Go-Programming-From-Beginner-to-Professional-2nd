@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bookutil/author"
+	"github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/Chapter09/Exercise09.01/author"
 )
 
 func main() {
