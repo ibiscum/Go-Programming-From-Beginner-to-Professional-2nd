@@ -24,7 +24,10 @@ func Test_something(t *testing.T) {
 	}
 
 	actual := make([]byte, rsp.ContentLength)
-	rsp.Body.Read(actual)
+	_, err = rsp.Body.Read(actual)
+	if err != nil {
+		panic(err)
+	}
 	if string(actual) != string(expected) {
 		t.Errorf("%s\n%s", string(expected), string(actual))
 	}

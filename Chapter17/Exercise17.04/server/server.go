@@ -25,7 +25,10 @@ func (srv server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	w.Write([]byte(fmt.Sprintf("%s Uploaded!", uploadedFileHeader.Filename)))
+	_, err = w.Write([]byte(fmt.Sprintf("%s Uploaded!", uploadedFileHeader.Filename)))
+	if err != nil {
+		log.Panic(err)
+	}
 }
 func main() {
 	log.Fatal(http.ListenAndServe(":8080", server{}))
