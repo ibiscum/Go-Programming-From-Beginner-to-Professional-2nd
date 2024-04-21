@@ -32,7 +32,10 @@ func TestPay(t *testing.T) {
 			d := Developer{Individual: Employee{Id: 1, FirstName: tc.inputFirst, LastName: tc.inputLast}, HourlyRate: tc.inputHourlyRate, HoursWorkedInYear: tc.inputHoursWorkedInYear, Review: nil}
 			gotName, gotSalary := d.Pay()
 			if gotName != tc.wantedFullName || gotSalary != tc.wantedPay {
-				fmt.Errorf("Got name: %v wanted name: %v Got salary: %v wanted salary %v", gotName, tc.wantedFullName, gotSalary, tc.wantedPay)
+				err := fmt.Errorf("Got name: %v wanted name: %v Got salary: %v wanted salary %v", gotName, tc.wantedFullName, gotSalary, tc.wantedPay)
+				if err != nil {
+					panic(err)
+				}
 			}
 		})
 	}
