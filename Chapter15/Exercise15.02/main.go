@@ -73,7 +73,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
 	result, err = numbers.Query()
+	if err != nil {
+		panic(err)
+	}
+
 	for result.Next() {
 		err = result.Scan(&number, &prop)
 		if err != nil {
@@ -85,7 +90,10 @@ func main() {
 			panic(err)
 		}
 	}
-	numbers.Close()
+	err = numbers.Close()
+	if err != nil {
+		panic(err)
+	}
 	fmt.Println("The execution is now complete...")
 	db.Close()
 }
