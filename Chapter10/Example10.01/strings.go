@@ -9,7 +9,6 @@ type Builder struct {
 }
 
 // https://golang.org/src/strings/compare.go
-package strings
 func Compare(a, b string) int {
 	if a == b {
 		return 0

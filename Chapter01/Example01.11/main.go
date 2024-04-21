@@ -8,5 +8,5 @@ func main() {
 		fmt.Println("Block end   :", level)
 	}
 	// Error: undefined: level
-	fmt.Println("Main end    :", level)
+	// fmt.Println("Main end    :", level)
 }

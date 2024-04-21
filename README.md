@@ -68,6 +68,6 @@ With the following software and hardware list you can run all code files present
 
 ## Get to Know the Author
 **Samantha Coyle**
-Samantha Coyle, a Soft ware Engineer at Diagrid, specializes in Go for cloud-native developer tooling, adept at abstracting application development challenges. Committed to Open Source, she actively contributes to projects like Dapr and Testcontainers. With a diverse background in retail computer vision solutions and successful stabilization of industrial edge use cases, particularly within biopharma data pipelines, Samantha brings invaluable expertise to her projects. Her expertise extends to being CKAD-certifi ed and reviewing Go textbooks. She is passionate about empowering early-career, diverse professionals.
+Samantha Coyle, a Software Engineer at Diagrid, specializes in Go for cloud-native developer tooling, adept at abstracting application development challenges. Committed to Open Source, she actively contributes to projects like Dapr and Testcontainers. With a diverse background in retail computer vision solutions and successful stabilization of industrial edge use cases, particularly within biopharma data pipelines, Samantha brings invaluable expertise to her projects. Her expertise extends to being CKAD-certifi ed and reviewing Go textbooks. She is passionate about empowering early-career, diverse professionals.
 
 Samantha is part of a family of gophers, and enjoys GopherCon with her brother and identical twin sister. A seasoned speaker, she has presented at various conferences, including GopherCon
