@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html"
 	"io"
 	"log"
 	"net/http"
@@ -25,7 +26,7 @@ func (srv server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	_, err = w.Write([]byte(fmt.Sprintf("%s Uploaded!", uploadedFileHeader.Filename)))
+	_, err = w.Write([]byte(fmt.Sprintf("%s Uploaded!", html.EscapeString(uploadedFileHeader.Filename))))
 	if err != nil {
 		log.Panic(err)
 	}
