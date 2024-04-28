@@ -23,6 +23,7 @@ func main() {
 func (p person) String() string {
 	return fmt.Sprintf("%v (%v years old).\nMarried status: %v ", p.name, p.age, p.isMarried)
 }
+
 func (p person) Speak() string {
 	return "Hi my name is: " + p.name
 }

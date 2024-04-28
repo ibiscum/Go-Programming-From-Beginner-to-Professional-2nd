@@ -9,7 +9,6 @@ func TestString(t *testing.T) {
 		isMarried bool
 		wanted    string
 	}{
-
 		{
 			name:      "Cayden Smash",
 			age:       4,
@@ -29,7 +28,6 @@ func TestString(t *testing.T) {
 			}
 		})
 	}
-
 }
 
 func TestSpeak(t *testing.T) {
@@ -37,7 +35,6 @@ func TestSpeak(t *testing.T) {
 		name   string
 		wanted string
 	}{
-
 		{
 			name:   "Cayden Smash",
 			wanted: "Hi my name is: Cayden Smash",
@@ -51,9 +48,8 @@ func TestSpeak(t *testing.T) {
 			got := p.Speak()
 
 			if got != tc.wanted {
-				t.Errorf("Got   : %v\n Wanted: %v\n", got, tc.wanted)
+				t.Errorf("got: %v\n wanted: %v\n", got, tc.wanted)
 			}
 		})
 	}
-
 }
