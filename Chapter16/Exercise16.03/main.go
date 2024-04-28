@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html"
 	"log"
 	"net/http"
 	"strings"
@@ -18,7 +19,7 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	_, err := w.Write([]byte(fmt.Sprintf("Hello %s", strings.Join(name, ","))))
+	_, err := w.Write([]byte(fmt.Sprintf("Hello %s", html.EscapeString(strings.Join(name, ",")))))
 	if err != nil {
 		log.Panic(err)
 	}
