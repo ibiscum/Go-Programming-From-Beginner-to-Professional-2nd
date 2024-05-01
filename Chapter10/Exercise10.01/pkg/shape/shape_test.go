@@ -42,7 +42,7 @@ func TestTriangleName(t *testing.T) {
 	}{
 		{
 			name:   "Triangle Name Scenario 1",
-			wanted: "triangle",
+			wanted: "Triangle",
 		},
 	}
 
@@ -51,7 +51,7 @@ func TestTriangleName(t *testing.T) {
 			s := Triangle{}
 			got := s.name()
 			if got != tc.wanted {
-				err := fmt.Errorf("Got: %v wandted %v", got, tc.wanted)
+				err := fmt.Errorf("got: %v wanted %v", got, tc.wanted)
 				if err != nil {
 					panic(err)
 				}
