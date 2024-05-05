@@ -10,10 +10,7 @@ func sum(from, to int, wg *sync.WaitGroup, res *int) {
 	for i := from; i <= to; i++ {
 		*res += i
 	}
-
 	wg.Done()
-
-	// return
 }
 
 func main() {

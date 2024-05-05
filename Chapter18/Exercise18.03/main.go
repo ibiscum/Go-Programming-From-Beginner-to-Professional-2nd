@@ -9,12 +9,10 @@ import (
 func sum(from, to int, wg *sync.WaitGroup, res *int32) {
 	for i := from; i <= to; i++ {
 		atomic.AddInt32(res, int32(i))
-		//*res = *res + int32(i)
+		// *res = *res + int32(i)
 	}
 
 	wg.Done()
-
-	// return
 }
 
 func main() {
