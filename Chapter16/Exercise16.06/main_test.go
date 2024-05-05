@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -25,7 +26,7 @@ func Test_something(t *testing.T) {
 
 	actual := make([]byte, rsp.ContentLength)
 	_, err = rsp.Body.Read(actual)
-	if err != nil {
+	if err != io.EOF {
 		panic(err)
 	}
 	if string(actual) != string(expected) {

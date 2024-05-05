@@ -11,9 +11,9 @@ func TestHello(t *testing.T) {
 	r := httptest.NewRequest(http.MethodGet, `/?name="john"`, strings.NewReader(""))
 	w := httptest.NewRecorder()
 
-	Hello(w,r)
+	Hello(w, r)
 
-	exp :=  `Hello "john"`
+	exp := `Hello &#34;john&#34;`
 
 	if w.Body.String() != exp {
 		t.Errorf("Expected '%s' but received '%s'", exp, w.Body.String())
@@ -29,9 +29,9 @@ func TestHello_Fail(t *testing.T) {
 	r := httptest.NewRequest(http.MethodGet, "/", strings.NewReader(""))
 	w := httptest.NewRecorder()
 
-	Hello(w,r)
+	Hello(w, r)
 
-	exp :=  `Missing name`
+	exp := `Missing name`
 
 	if w.Body.String() != exp {
 		t.Errorf("Expected '%s' but received '%s'", exp, w.Body.String())

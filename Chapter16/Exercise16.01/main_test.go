@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -32,12 +33,11 @@ func TestHello_ServeHTTPWithPath(t *testing.T) {
 
 	result := make([]byte, rsp.ContentLength)
 	_, err = rsp.Body.Read(result)
-	if err != nil {
+	if err != io.EOF {
 		log.Panic(err)
 	}
 
 	if string(result) != "<h1>Hello World</h1>" {
 		t.Errorf("Expected '<h1>Hello World</h1>' string but received: '%s'", string(result))
 	}
-
 }

@@ -17,7 +17,7 @@ func TestFileUpload_ServeHTTP(t *testing.T) {
 	fileDataBuffer := bytes.Buffer{}
 	multipartWriter := multipart.NewWriter(&fileDataBuffer)
 
-	file, err := os.Open("./go.mod")
+	file, err := os.Open("./test.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -41,7 +41,7 @@ func TestFileUpload_ServeHTTP(t *testing.T) {
 	w := httptest.NewRecorder()
 
 	server.ServeHTTP(w, r)
-	if w.Body.String() != "go.mod Uploaded!" {
-		t.Errorf("Expected 'go.mod Uploaded!' string but received: '%s'", w.Body.String())
+	if w.Body.String() != "test.txt Uploaded!" {
+		t.Errorf("Expected 'test.txt Uploaded!' string but received: '%s'", w.Body.String())
 	}
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -24,7 +25,7 @@ func Test_name(t *testing.T) {
 	}
 	actual := make([]byte, rsp.ContentLength)
 	_, err = rsp.Body.Read(actual)
-	if err != nil {
+	if err != io.EOF {
 		log.Panic(err)
 	}
 	if string(actual) != string(expected) {
@@ -48,7 +49,7 @@ func Test_anonymous(t *testing.T) {
 	}
 	actual := make([]byte, rsp.ContentLength)
 	_, err = rsp.Body.Read(actual)
-	if err != nil {
+	if err != io.EOF {
 		log.Panic(err)
 	}
 	if string(actual) != string(expected) {
