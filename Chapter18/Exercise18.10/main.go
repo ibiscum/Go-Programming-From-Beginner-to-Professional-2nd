@@ -7,8 +7,8 @@ import (
 
 type Worker struct {
 	in, out chan int
-	sbw int
-	mtx *sync.Mutex
+	sbw     int
+	mtx     *sync.Mutex
 }
 
 func (w *Worker) readThem() {
@@ -27,7 +27,6 @@ func (w *Worker) readThem() {
 		}
 		w.mtx.Unlock()
 	}()
-
 }
 
 func (w *Worker) gatherResult() int {
@@ -35,7 +34,7 @@ func (w *Worker) gatherResult() int {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 	go func() {
-		for  i:= range w.out{
+		for i := range w.out {
 			total += i
 		}
 		wg.Done()
@@ -51,15 +50,13 @@ func main() {
 	in := make(chan int, 100)
 	wrNum := 10
 	out := make(chan int)
-	wrk := Worker{in: in, out:out, mtx:mtx}
+	wrk := Worker{in: in, out: out, mtx: mtx}
 
-	for i:=1; i<=wrNum; i++ {
+	for i := 1; i <= wrNum; i++ {
 		wrk.readThem()
 	}
 
-
-
-	for i:=1;i<=100; i++ {
+	for i := 1; i <= 100; i++ {
 		in <- i
 	}
 	close(in)
@@ -68,4 +65,3 @@ func main() {
 
 	fmt.Println(res)
 }
-
