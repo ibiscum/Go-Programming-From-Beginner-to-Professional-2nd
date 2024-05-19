@@ -28,12 +28,12 @@ func main() {
 	})
 	http.Handle("/metrics", promhttp.Handler())
 	server := &http.Server{
-		Addr:         ":8080",
+		Addr:         ":8070",
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 	}
 
-	fmt.Println("Server listening on port 8080...")
+	fmt.Println("Server listening on port 8070...")
 	if err := server.ListenAndServe(); err != nil {
 		fmt.Printf("Error starting server: %s\n", err)
 	}

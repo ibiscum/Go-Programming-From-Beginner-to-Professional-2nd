@@ -47,6 +47,7 @@ func initLogger() *zap.Logger {
 	}
 	return logger
 }
+
 func initTracerProvider(traceExporter *otlptrace.Exporter) *sdktrace.TracerProvider {
 	exp, err := stdouttrace.New(stdouttrace.WithPrettyPrint())
 	if err != nil {
@@ -106,11 +107,11 @@ func main() {
 	httpHandler := otelhttp.NewHandler(http.HandlerFunc(handler), "HTTPServer")
 	http.Handle("/", httpHandler)
 	server := &http.Server{
-		Addr:         ":8080",
+		Addr:         ":8070",
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
 	}
-	fmt.Println("Server listening on port 8080...")
+	fmt.Println("Server listening on port 8070...")
 	if err := server.ListenAndServe(); err != nil {
 		fmt.Printf("Error starting server: %s\n", err)
 	}
