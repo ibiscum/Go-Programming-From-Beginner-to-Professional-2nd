@@ -1,6 +1,10 @@
 # Go Programming - From Beginner to Professional Second Edition
 
+[![Dependabot Updates](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/dependabot/dependabot-updates)
+
 [![lint](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/lint.yml/badge.svg)](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/lint.yml)
+
+[![codeql go](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/codeql.yml/badge.svg)](https://github.com/ibiscum/Go-Programming-From-Beginner-to-Professional-2nd/actions/workflows/codeql.yml)
 
 <a href="https://www.packtpub.com/product/go-programming-from-beginner-to-professional-second-edition/9781803243054"> <img src="https://content.packt.com/B18621/cover_image_small.jpg" alt="Go Programming - From Beginner to Professional - Second Edition" itemprop="url" height="256px" align="right">
 
