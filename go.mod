@@ -65,7 +65,7 @@ require (
 	github.com/charmbracelet/bubbletea v1.2.4
 	github.com/gorilla/mux v1.8.1
 	github.com/lib/pq v1.10.9
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	golang.org/x/text v0.20.0 // indirect
 	gotest.tools v2.2.0+incompatible
 	rsc.io/sampler v1.99.99 // indirect
