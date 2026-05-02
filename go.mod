@@ -65,7 +65,7 @@ require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/charmbracelet/bubbletea v1.2.4
 	github.com/gorilla/mux v1.8.1
-	github.com/lib/pq v1.10.9
+	github.com/lib/pq v1.12.3
 	github.com/stretchr/testify v1.11.1
 	golang.org/x/text v0.35.0 // indirect
 	gotest.tools v2.2.0+incompatible
